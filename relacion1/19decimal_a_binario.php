@@ -13,24 +13,29 @@
     <?php
 
         // Haz un script PHP en el que conviertas en binario un número natural decimal
-        const DIVISOR = 2;
-        $numero = 4;
-        $resto;
-        $binario = [];
+        $numero = 16;
+        $binario = "";
+        $cociente;
         
         if ($numero < 0) {
             echo "No se ha podido convertir el número a binario";
-        }
+        };
 
-        while ($numero > 0) {
+        while ($numero >= 2) {
 
-            $numero /= DIVISOR;
-            $resto = $numero % DIVISOR;
-            array_push($binario, $resto);
+            // casting explícito del resultado del módulo de $numero entre 2, y concatenacion con el contenido almacenado en $binario
+            // se almacena en un string los restos, rellenando desde el final al principio
+            $binario = (string) $numero % 2 . $binario;
 
-        }
+            // el operador /= no distingue entre división entera y real. Como resultado, incluye la parte decimal
+            // sustituido por operacion intermedia para realizar division entera
+            $cociente = intval($numero / 2); // resultado entero
+            $numero = $cociente; // recoge el último resto
+            
+        };
 
-        echo "El equivalente del número en binario es " , implode($binario);
+        // $binario: almacena todos los restos menos el último
+        echo "El equivalente del número en binario es ", $numero . $binario;
 
     ?>
     

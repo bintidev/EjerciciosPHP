@@ -14,26 +14,43 @@
 
         // Haz un script PHP en el que conviertas en binario un número natural decimal
         // PENDIENTE CORRECCIÓN
-        const DIVISOR_B = 2; const DIVISOR_O = 8; const DIVISOR_H = 16;
-        $numero = 32;
-        $resto;
-        $binario = [];
-        $octal = [];
-        $hexadecimal = [];
+        $base = 16;
+        $numero = 128;
+        $resultado = "";
+        $cociente;
+        $digito;
+        $caracter;
         
         if ($numero < 0) {
-            echo "No se ha podido convertir el número a binario";
-        }
+            echo "No se ha podido realizar la conversión";
+        };
 
-        do {
+        while ($numero >= $base) {
 
-            $numero /= DIVISOR;
-            $resto = $numero % DIVISOR;
-            array_push($binario, $resto);
+            // casting explícito del resultado del módulo de $numero entre 2, y concatenacion con el contenido almacenado en $binario
+            // se almacena en un string los restos, rellenando desde el final al principio
+            $digito = $numero % $base;
+        
 
-        } while ($numero > 0);
+            if ($cociente > 9) {
 
-        echo "El equivalente del número en binario es " , implode($binario);
+                // si el digito fuera 10, sacaria 'A', si 11, sacaria 'B', etc
+                // chr() cambia numero por caracter ASCII
+                // el 55 es para el 'salto' entre el 10 y la 'A' que es 65
+                $caracter = chr(55 + $digito);
+            } else {
+                $caracter = (string) $digito;
+            }
+
+            // el operador /= no distingue entre división entera y real. Como resultado, incluye la parte decimal
+            // sustituido por operacion intermedia para realizar division entera
+            $cociente = intval($numero / 2); // resultado entero
+            $numero = $cociente; // recoge el último resto
+            
+        };
+
+        // $binario: almacena todos los restos menos el último
+        echo "El equivalente del número en binario es ", $numero . $binario;
 
     ?>
     
