@@ -36,48 +36,33 @@
         if ($a == 0) {
 
             // subcondicion: que ni c ni b sean 0
-            if ($c == 0 || $b == 0) {
+            if ($b == 0) {
                 echo $error;
-
             } else {
-
                 $x1 = -$c/$b;
-                echo "Resultado: $x1";
-
+                echo "Resultado único posible: $x1";
             }
 
         // segunda consideracion: b = 0
         } elseif ($b == 0) {
-
             // subcondicion: que ni a ni c sean 0
-            if ($a == 0 || $c == 0) {
+            if ($c == 0) {
                 echo $error;
-
             } else {
 
                 $x1 = -sqrt(-$c/$a);
                 $x2 = sqrt(-$c/$a);
 
                 echo "Primer resultado: $x1 - Segundo resultado: $x2";
-
             }
 
             // tercera consideracion: c = 0
         } elseif ($c == 0) {
 
-            // subcondicion: que ni a ni b sean 0
-            if ($a == 0 || $b == 0) {
-                echo $error;
-
-            } else {
-
                 $x1 = 0;
-                $x2 = -b/a;
+                $x2 = -$b/$a;
 
                 echo "Primer resultado: $x1 - Segundo resultado: $x2";
-
-            }
-
         } else {
 
             // ultima consideracion: si existen a, b y c
