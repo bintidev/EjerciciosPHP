@@ -13,13 +13,13 @@
     <h2>Calculadora Básica con 2 Número y un Operador</h2>
 
     <form action="" method="get">
-        <div class="form">
-            <label for="numero1">Introduce número 1:</label>
+        <div class="mb-3">
+            <label for="numero1" class="form-label">Introduce número 1:</label>
             <input type="text" name="numero1" id="numero1">
         </div>
 
-        <div>
-            <label for="operador">Elige un operador:</label>
+        <div class="mb-3">
+            <label for="operador" class="form-label">Elige un operador:</label>
             <select name="operador" id="operador"> <!--Lista desplegable-->
                 <option value="suma">+</option>
                 <option value="resta">-</option>
@@ -29,8 +29,8 @@
             </select>
         </div>
 
-        <div class="form">
-            <label for="numero2">Introduce número 2:</label>
+        <div class="mb-33">
+            <label for="numero2" class="form-label">Introduce número 2:</label>
             <input type="text" name="numero2" id="numero2">
         </div>
 
