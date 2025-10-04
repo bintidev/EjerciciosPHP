@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Super Index</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="wrapper bg-body-secondary" style="scroll-behavior: smooth;">
+
+    <!-- Vamos a realizar lo propio con esta relación, y un super-index para todas las
+    relaciones que vamos a realizar. El “super-index” tendrá una barra de
+    navegación, una card por cada relación y un footer. Formatea con Bootstrap
+    a tu gusto, experimentando diversas posibilidades hasta dar con tu preferida. -->
+    
+    <!-- nav -->  
+
+    <nav class="navbar navbar-expand-lg bg-gradient bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-3 fw-bold text-white" href="#">
+                <img src="https://www.pngkey.com/png/full/109-1090674_php-logo-png-php-logo-png-white.png" alt="php_logo" style="width: 60px;">
+                Ejercicios DWES
+            </a>
+            <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active fs-5 text-white" aria-current="page" href="#">Relacion 1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fs-5 text-white" href="#">Relacion 2</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-3 px-5 bg-white w-100">
+        <div class="row justify-content-center">
+            <!-- card por relacion -->
+            <div class="card col-md-5 col-lg-3 m-3 p-0" style="box-shadow: 0 0 10px #2347bb;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgofB6aAosgQhQnsTTkcPVLzvZX_t56APey4H2SDIFncom_0A2iNE1HCBwf8hR7ufxgJY&usqp=CAU" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Relacion 1</h5>
+                    <p class="card-text">
+                        Primeros pasos en el lenguaje PHP. Familiarización con sintaxis, variables,
+                        tipos primitivos, estructuras de control, bucles, funciones integradas, clases,
+                        etc.
+                    </p>
+                    <a href="./relacion1/" target="_blank" class="btn text-white fw-bo" style="background-color: #2347bb; border-color: #2347bb;">Ir a Relacion 1</a>
+                </div>
+            </div>
+
+            <div class="card col-md-5 col-lg-3 m-3 p-0" style="box-shadow: 0 0 10px #6920fa;">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/7/327648949/PQ/AT/BF/142849372/bootstrap-website-development-services-500x500.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Relacion 2</h5>
+                    <p class="card-text">
+                        Personalizacion y organizacion del contenido con el framework bootstrap. Jugando
+                        con diferentes formatos de colores, texto, multimedia, entre otros
+                    </p>
+                    <a href="./relacion2/" target="_blank" class="btn text-white" style="background-color: #6920fa; border-color: #6920fa;">Ir a Relacion 2</a>
+                </div>
+            </div>
+
+            <!--<div class="card col-md-5 col-lg-3 m-3 p-0" style="box-shadow: 0 0 10px #6920fa;">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/7/327648949/PQ/AT/BF/142849372/bootstrap-website-development-services-500x500.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Relacion 2</h5>
+                    <p class="card-text">
+                        Personalizacion y organizacion del contenido con el framework bootstrap. Jugando
+                        con diferentes formatos de colores, texto, multimedia, entre otros
+                    </p>
+                    <a href="./relacion2/" target="_blank" class="btn text-white" style="background-color: #6920fa; border-color: #6920fa;">Ir a Relacion 2</a>
+                </div>
+            </div>
+
+            <div class="card col-md-5 col-lg-3 m-3 p-0" style="box-shadow: 0 0 10px #6920fa;">
+                <img src="https://5.imimg.com/data5/SELLER/Default/2023/7/327648949/PQ/AT/BF/142849372/bootstrap-website-development-services-500x500.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title fw-bold">Relacion 2</h5>
+                    <p class="card-text">
+                        Personalizacion y organizacion del contenido con el framework bootstrap. Jugando
+                        con diferentes formatos de colores, texto, multimedia, entre otros
+                    </p>
+                    <a href="./relacion2/" target="_blank" class="btn text-white" style="background-color: #6920fa; border-color: #6920fa;">Ir a Relacion 2</a>
+                </div>
+            </div>-->
+        </div>
+    </div>
+
+    <!-- footer -->
+    <ul class="nav justify-content-center bg-secondary">
+        <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="#">Link</a>
+        </li>
+        <li class="nav-item text-white">
+            &copy; 2025, Binta Diop
+        </li>
+    </ul>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+
+</body>
+</html>
