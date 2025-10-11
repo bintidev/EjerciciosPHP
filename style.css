@@ -1,0 +1,68 @@
+#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-image: url(https://www.digitalocean.com/api/static-content/v1/images?src=https%3A%2F%2Fcommunity-cdn-digitalocean-com.global.ssl.fastly.net%2FpkgrFaQAVpPLyV1hU5hQoiCw&width=1920);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 5rem;
+}
+
+#content {
+    width: auto;
+    padding-top: 5rem;
+    text-align: center;
+    color: black;
+}
+
+#content h1 {
+    font-size: 65px;
+    text-shadow: 0 0 20px #6780c1;
+    color: white;
+}
+
+.navbar {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    background: linear-gradient(#5e76ad, #28447c);
+}
+
+#blue-btn {
+    border-color: #616496;
+    color: #616496;
+}
+
+    #blue-btn:hover {
+        background-color: #616496;
+        color: white;
+        font-weight: 500;
+    }
+
+#purple-btn {
+    border-color: #7107F3;
+    color: #7107F3;
+}
+
+    #purple-btn:hover {
+        background-color: #7107F3;
+        color: white;
+    }
+
+.card {
+    box-shadow: none;
+    transition: .3s;
+    transition-timing-function: ease-in;
+}
+
+    .card:hover {
+        box-shadow: 0 0 20.5px #6e92ee;
+    }
+
+#footer {
+    width: auto;
+    background-color: #28447c;
+}
