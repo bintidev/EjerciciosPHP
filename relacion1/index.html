@@ -5,34 +5,296 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relacion 1</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        body {
+            background-image: url(https://static.vecteezy.com/system/resources/thumbnails/001/857/440/small_2x/light-red-blurred-backdrop-vector.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            scroll-behavior: smooth;
+        }
+
+        .list-group-item {
+            background-color: #ffeeee;
+        }
+
+        #go-up-btn {
+            z-index: 1;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            margin: 10px;
+            padding: 10px;
+            border: solid 2px black;
+            transition: .3s;
+            transition-timing-function: ease;
+        }
+
+        #go-up-btn:hover {
+            border: solid 2px white;
+            background-color: white;
+        }
+
+            #go-up-btn img {
+                width: 25px;
+            }
+    </style>
 </head>
-<body class="container bg-danger-subtle mb-5 p-10">
+<body>
 
-    <div>
-        <h1 class="text-center text-white fw-bold bg-danger my-5 mb-0 py-3 px-5 rounded-top-4" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Relación de Ejercicios Número 1</h1>
+    <div class="text-center text-white fw-bold fs-1 bg-danger mx-4 mt-4 p-4 rounded-4">
+        <p>
+            Relación de Ejercicios Número 1
+        </p>
+    </div>
 
-        <div class="list-group list-group-numbered border border-top-0 border-1 border-danger rounded-bottom-4">
-            <a href="1hola_mundo.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Programa "Hola Mundo" en PHP</a>
-            <a href="2tipos_escalares.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Trabajando con Tipos</a>
-            <a href="3superglobales.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Formas de Impresión por Pantalla con Superglobales</a>
-            <a href="4array.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Días de la Semana con Arrays</a>
-            <a href="5array_asociativo.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Día y Temperatura con Array Asociativo</a>
-            <a href="6clase_fruta.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Creación de la Clase Fruta</a>
-            <a href="7nota_media.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Cálculo de la Nota Final</a>
-            <a href="8arrays_asociativos_paralelos.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Rúbrica, Notas y Nota Final</a>
-            <a href="9triangulo.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Determinando el Tipo de Triángulo a Partir de Lados</a>
-            <a href="10ecuacion_segundo_grado.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Resolviendo Ecuación de Segundo Grado</a>
-            <a href="11mejora_ecuacion.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Mejora de la Ecuación de Segundo Grado</a>
-            <a href="12nota_switch.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Determinando notas con Bifurcaciones Múltiples</a>
-            <a href="13factorial.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Calculando el Factorial de un Número</a>
-            <a href="14sumatorio.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Sumatorio de Número Naturales</a>
-            <a href="15numero_primo.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Buscando Números Primos</a>
-            <a href="16divisores_con_estilo.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Divisores y Estilo</a>
-            <a href="17division_euclides.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Diviendo Números con el Algoritmo de Euclides</a>
-            <a href="18mcd_euclides.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Búsqueda del Máximo Común Divisor</a>
-            <a href="19decimal_a_binario.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Conversión de un Número Decimal a Binario</a>
-            <a href="20mejora_binario.php" target="_blank" class="list-group-item list-group-item-action list-group-item-light border-danger">Mejora del Conversor a Binario</a>
+    <div class="d-flex justify-content-center align-items-center mb-4" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group me-2 bg-dark" role="group" aria-label="First group">
+            <a href="#ej1"><button type="button" class="btn btn-dark">1</button></a>
+            <a href="#ej2"><button type="button" class="btn btn-dark">2</button></a>
+            <a href="#ej3"><button type="button" class="btn btn-dark">3</button></a>
+            <a href="#ej4"><button type="button" class="btn btn-dark">4</button></a>
+            <a href="#ej5"><button type="button" class="btn btn-dark">5</button></a>
+            <a href="#ej6"><button type="button" class="btn btn-dark">6</button></a>
+            <a href="#ej7"><button type="button" class="btn btn-dark">7</button></a>
+            <a href="#ej8"><button type="button" class="btn btn-dark">8</button></a>
+            <a href="#ej9"><button type="button" class="btn btn-dark">9</button></a>
+            <a href="#ej10"><button type="button" class="btn btn-dark">10</button></a>
+            <a href="#ej11"><button type="button" class="btn btn-dark">11</button></a>
+            <a href="#ej12"><button type="button" class="btn btn-dark">12</button></a>
+            <a href="#ej13"><button type="button" class="btn btn-dark">13</button></a>
+            <a href="#ej14"><button type="button" class="btn btn-dark">14</button></a>
+            <a href="#ej15"><button type="button" class="btn btn-dark">15</button></a>
+            <a href="#ej16"><button type="button" class="btn btn-dark">16</button></a>
+            <a href="#ej17"><button type="button" class="btn btn-dark">17</button></a>
+            <a href="#ej18"><button type="button" class="btn btn-dark">18</button></a>
+            <a href="#ej19"><button type="button" class="btn btn-dark">19</button></a>
+            <a href="#ej20"><button type="button" class="btn btn-dark">20</button></a>
         </div>
     </div>
+
+    <div class="container">
+        <div class="list-group border border-danger rounded-4 mb-4">
+            <a href="1hola_mundo.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej1">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">1. Programa "Hola Mundo" en PHP</h5>
+                </div>
+                <p class="mb-1">
+                    Muestra el mensaje “Hello world” de
+                    diferentes formas
+                </p>
+            </a>
+            <a href="2tipos_escalares.php" target="_blank"
+        
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej2">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">2. Trabajando con Tipos</h5>
+                </div>
+                <p class="mb-1">
+                    Muestra valores de ejemplo de cada tipo de dato escalar en
+                    PHP con echo utilizando la función var_dump(), y también
+                    con printf formateado.
+                </p>
+            </a>
+            <a href="3superglobales.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej3">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">3. Formas de Impresión por Pantalla con Superglobales</h5>
+                </div>
+                <p class="mb-1">
+                    Investigando sobre variables superglobales. Muestra, en forma
+                    de lista, los valores para algunas de ellas. Uso de echo, var_dump($_SERVER)
+                    y print_r($_SERVER) y diferenciación
+                </p>
+            </a>
+            <a href="4array.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej4">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">4. Días de la Semana con Arrays</h5>
+                </div>
+                <p class="mb-1">
+                    Declaración de de un array constante en el que se almacenarán los
+                    días de la semana. Luego, mostrar el primer día de la semana
+                    los días secuencialmente y lo mismo que el anterior, pero en formato
+                    de lista numerada
+                </p>
+            </a>
+            <a href="5array_asociativo.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej5">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">5. Día y Temperatura con Array Asociativo</h5>
+                </div>
+                <p class="mb-1">
+                    Declaración de un array asociativo constante, utilizando como clave el día de la
+                    semana, y como valor, la temperatura máxima de ese día en formato real. Muestra
+                    la temperatura del primer dia de la semana, la temperatura de todos los días,
+                    secuencialmente y lo mismo que el anterior, pero en formato de lista numerada
+                </p>
+            </a>
+            <a href="6clase_fruta.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej6">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">6. Creación de <code>class Fruta</code></h5>
+                </div>
+                <p class="mb-1">
+                    Clase fruta, con dos atributos: nombre y color, y dos funciones, set_name() y
+                    get_name(). Declaración e inicialización de dos instancias: apple y banana
+                </p>
+            </a>
+            <a href="7nota_media.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej7">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">7. Cálculo de la Nota Final</h5>
+                </div>
+                <p class="mb-1">
+                    Cálculo de la nota final de una persona a partir de la media de dos notas
+                    numéricas iniciales, y descontando 0.25 por cada falta sin justificar. Muestra el
+                    resultado por pantalla, indicando si la persona aprueba o suspende.
+                </p>
+            </a>
+            <a href="8arrays_asociativos_paralelos.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej8">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">8. Rúbrica, Notas y Nota Final</h5>
+                </div>
+                <p class="mb-1">
+                    Dos arrays asociativos paralelos, uno con la rúbrica de 4 calificaciones
+                    (inicial, primera, segunda y tercera) y otro con las notas particulares de
+                    una persona. A continuación, computará la nota final de esa persona, y la
+                    muestra por pantalla.
+                </p>
+            </a>
+            <a href="9triangulo.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej9">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">9. Tipo de Triángulo a Partir de Lados</h5>
+                </div>
+                <p class="mb-1">
+                    Valora a partir de los 3 lados de un triángulo si es equilátero, isósceles
+                    o escaleno, y muestra esa valoración por pantalla
+                </p>
+            </a>
+            <a href="10ecuacion_segundo_grado.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej10">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">10. Ecuación de Segundo Grado</h5>
+                </div>
+                <p class="mb-1">
+                    Resuelve una ecuación de segundo grado siempre que los resultados sean reales
+                </p>
+            </a>
+            <a href="11mejora_ecuacion.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej11">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">11. Mejora de la Ecuación de Segundo Grado</h5>
+                </div>
+                <p class="mb-1">
+                    Si alguno de los coeficientes a, b o c fuera 0, el programa gestiona el cálculo
+                    de resultados de manera más adecuada
+                </p>
+            </a>
+            <a href="12nota_switch.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej12">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">12. Calificación de Notas con <code>switch</code></h5>
+                </div>
+                <p class="mb-1">
+                    A partir de una nota numérica entera entre 1 y 10 devuelve:
+                    <ul>
+                        <li>Sobresaliente si es 9 ó 10</li>
+                        <li>Notable si es 7 u 8</li>
+                        <li>Bien si es un 6</li>
+                        <li>Suficiente si es un 5</li>
+                        <li>Suspenso, si es 1,2,3 ó 4</li>
+                    </ul>
+                    Comprueba que la nota esté en el rango adecuado de valores permitidos
+                </p>
+            </a>
+            <a href="13factorial.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej13">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">13. Factorial de un Número</h5>
+                </div>
+                <p class="mb-1">
+                    Calcula el factorial de un número natural. Muestra los cálculos que se
+                    van haciendo
+                </p>
+            </a>
+            <a href="14sumatorio.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej14">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">14. Sumatorio de Número Naturales</h5>
+                </div>
+                <p class="mb-1">
+                    Calcula la suma de los <code>n</code> primeros números naturales
+                </p>
+            </a>
+            <a href="15numero_primo.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej15">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">15. Buscando Números Primos</h5>
+                </div>
+                <p class="mb-1">
+                    Dice si un número entero y positivo es primo o no
+                </p>
+            </a>
+            <a href="16divisores_con_estilo.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej16">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">16. Divisores y Estilo</h5>
+                </div>
+                <p class="mb-1">
+                    Muestra todos los divisores de un número entero y positivo y,
+                    cada número que se prueba y resulta ser divisor, aparecerá marcado
+                    visiblemente
+                </p>
+            </a>
+            <a href="17division_euclides.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej17">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">17. Algoritmo de Euclides</h5>
+                </div>
+                <p class="mb-1">
+                    Calcula la división de dos números naturales utilizando el algoritmo
+                    de Euclides para la división
+                </p>
+            </a>
+            <a href="18mcd_euclides.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej18">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">18. MCD Algoritmo de Euclides</h5>
+                </div>
+                <p class="mb-1">
+                    Calcula el máximo común divisor de dos números naturales utilizando
+                    el algoritmo de Euclides
+                </p>
+            </a>
+            <a href="19decimal_a_binario.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej19">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">19. Conversor Decimal a Binario</h5>
+                </div>
+                <p class="mb-1">
+                    Convierte en binario un número natural decimal
+                </p>
+            </a>
+            <a href="20mejora_binario.php" target="_blank"
+            class="list-group-item list-group-item-action p-4 border-danger" id="ej20">
+                <div class="d-flex w-100 justify-content-between">
+                    <h5 class="mb-1">20. Mejora del Conversor Decimal a Binario</h5>
+                </div>
+                <p class="mb-1">
+                    Convierte en binario, octal o hexadecimal un número natural decimal
+                </p>
+            </a>
+        </div>
+    </div>
+
+    <a href="#">
+        <button type="button" class="btn btn-outline-danger rounded-5" id="go-up-btn">
+            <img src="../assets/img/chevron-arrow-up.png" alt="">
+        </button>
+    </a>
 </body>
 </html>
