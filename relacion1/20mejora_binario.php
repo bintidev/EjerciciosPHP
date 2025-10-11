@@ -15,42 +15,30 @@
         // Haz un script PHP en el que conviertas en binario un número natural decimal
         // PENDIENTE CORRECCIÓN
         $base = 16;
-        $numero = 128;
+        $numero = 2190;
         $resultado = "";
-        $cociente;
-        $digito;
-        $caracter;
         
-        if ($numero < 0) {
-            echo "No se ha podido realizar la conversión";
-        };
+        echo "El número original es $numero y la base a la que pasarlo $base";
+        echo "<br>el resultado es : ";
 
         while ($numero >= $base) {
 
-            // casting explícito del resultado del módulo de $numero entre 2, y concatenacion con el contenido almacenado en $binario
-            // se almacena en un string los restos, rellenando desde el final al principio
-            $digito = $numero % $base;
-        
+            if ($digito > 9) {
 
-            if ($cociente > 9) {
+                    // si el digito fuera 10, sacaria 'A', si 11, sacaria 'B', etc
+                    // chr() cambia numero por caracter ASCII
+                    // el 55 es para el 'salto' entre el 10 y la 'A' que es 65
+                    $caracter = chr(55 + $digito);
+                } else {
+                    $caracter = (string) $digito;
+                }
 
-                // si el digito fuera 10, sacaria 'A', si 11, sacaria 'B', etc
-                // chr() cambia numero por caracter ASCII
-                // el 55 es para el 'salto' entre el 10 y la 'A' que es 65
-                $caracter = chr(55 + $digito);
-            } else {
-                $caracter = (string) $digito;
-            }
+            $resultado =  (string) $caracter . $numero % $base . $resultado; // casting explícito
+            $numero /= $base;
 
-            // el operador /= no distingue entre división entera y real. Como resultado, incluye la parte decimal
-            // sustituido por operacion intermedia para realizar division entera
-            $cociente = intval($numero / 2); // resultado entero
-            $numero = $cociente; // recoge el último resto
-            
-        };
+        }
 
-        // $binario: almacena todos los restos menos el último
-        echo "El equivalente del número en binario es ", $numero . $binario;
+        echo (string) $numero . $resultado;
 
     ?>
     
