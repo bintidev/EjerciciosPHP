@@ -16,7 +16,7 @@
     
     <div class="d-flex justify-content-center align-items-center" id="wrapper">
         <div class="container">
-            <h1>Formateo de Listas Numeradas</h1>
+            <h1 class="text-primary">Formateo de Listas Numeradas</h1>
 
             <?php
 
@@ -35,7 +35,7 @@
             const SEMANA = ["lunes", "martes", "miéroles", "jueves", "viernes", "sábado", "domingo"];
 
             echo "El primer día de la semana es ", SEMANA [0];
-            echo "<br>Una semana tiene ". count(SEMANA), " dias"; // o sizeof(), ambos calculan la longitud de un array
+            echo "<br>Una semana tiene ". count(SEMANA), " días"; // o sizeof(), ambos calculan la longitud de un array
             echo "<br><p class='fs-5 mt-5'>Todos los dias de la semana son:</p>";
 
             //Bucle for para recorrer el array. 
