@@ -23,7 +23,7 @@
 
         $aprueba = $notaFinal >= 5 ? "¡Alégrate, que estás aprobado!" : "Has suspendido. Otra vez será :(";
 
-        echo "Nombre: " . $nombre . " - Email: " . $email . "<br>" . $aprueba;
+        echo "Nombre: " . $nombre . " - Email: " . $email . "<br>" . "Nota final: " . $notaFinal . "<br>" . $aprueba;
 
     ?>
 
