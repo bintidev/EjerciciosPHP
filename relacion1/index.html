@@ -14,12 +14,27 @@
             scroll-behavior: smooth;
         }
 
-        .btn-toolbar {
+        .list-group-item {
+            background-color: #ffeeee;
+        }
+
+        #navbar-example2 {
             width: auto;
         }
 
-        .list-group-item {
-            background-color: #ffeeee;
+        .nav-link {
+            color: black;
+        }
+
+            .nav-link:hover {
+                color: white;
+                text-decoration: underline solid 1px;
+                transition: .3s;
+            }
+
+        .nav-item:hover {
+            background-color: rgb(226, 54, 97);
+            transition: .3s;
         }
 
         #go-up-btn {
@@ -27,20 +42,19 @@
             position: fixed;
             bottom: 0;
             right: 0;
-            margin: 10px;
+            margin: 10px 115px 10px 10px;
             padding: 10px;
+            background-color: rgb(226, 54, 97);
             border: solid 2px black;
-            transition: .3s;
-            transition-timing-function: ease;
         }
 
         #go-up-btn:hover {
-            border: solid 2px white;
             background-color: white;
+            transition: .3s;
         }
 
             #go-up-btn img {
-                width: 25px;
+                width: 30px;
             }
     </style>
 </head>
@@ -52,33 +66,75 @@
         </p>
     </div>
 
-    <div class="btn-toolbar d-flex justify-content-center my-2" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group me-2 bg-dark text-center" role="group">
-            <a href="#ej1" class="btn btn-dark">1</a>
-            <a href="#ej2" class="btn btn-dark">2</a>
-            <a href="#ej3" class="btn btn-dark">3</a>
-            <a href="#ej4" class="btn btn-dark">4</a>
-            <a href="#ej5" class="btn btn-dark">5</a>
-            <a href="#ej6" class="btn btn-dark">6</a>
-            <a href="#ej7" class="btn btn-dark">7</a>
-            <a href="#ej8" class="btn btn-dark">8</a>
-            <a href="#ej9" class="btn btn-dark">9</a>
-            <a href="#ej10" class="btn btn-dark">10</a>
-            <a href="#ej11" class="btn btn-dark">11</a>
-            <a href="#ej12" class="btn btn-dark">12</a>
-            <a href="#ej13" class="btn btn-dark">13</a>
-            <a href="#ej14" class="btn btn-dark">14</a>
-            <a href="#ej15" class="btn btn-dark">15</a>
-            <a href="#ej16" class="btn btn-dark">16</a>
-            <a href="#ej17" class="btn btn-dark">17</a>
-            <a href="#ej18" class="btn btn-dark">18</a>
-            <a href="#ej19" class="btn btn-dark">19</a>
-            <a href="#ej20" class="btn btn-dark">20</a>
-        </div>
-    </div>
-
     <div class="container">
-        <div class="list-group border border-danger rounded-4 mb-4">
+        <nav id="navbar-example2" class="d-flex justify-content-center align-items-center bg-secondary-subtle px-3 mb-3">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej1">1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej2">2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej3">3</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej4">4</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej5">5</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej6">6</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej7">7</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej8">8</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej9">9</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej10">10</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej11">11</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej12">12</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej13">13</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej14">14</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej15">15</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej16">16</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej17">17</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej18">18</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej19">19</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ej20">20</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="list-group border border-danger rounded-4 mb-4" ata-bs-spy="scroll"
+        data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true"
+        class="scrollspy-example bg-body-tertiary p-3 rounded-2" tabindex="0">
             <a href="1hola_mundo.php" target="_blank"
             class="list-group-item list-group-item-action p-4 border-danger" id="ej1">
                 <div class="d-flex w-100 justify-content-between">
