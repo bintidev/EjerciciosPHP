@@ -32,18 +32,17 @@ body {
     position: fixed;
     bottom: 0;
     right: 0;
-    margin: 10px 100px 25px 10px;
+    margin: 10px 195px 25px 10px;
     padding: 10px;
     border: solid 2px black;
 }
 
 #go-up-btn:hover {
-    background-color: white;
     transition: .3s;
 }
 
 #go-up-btn img {
-    width: 30px;
+    width: 25.5px;
 }
 
 @media screen and (max-width: 1000px) {
