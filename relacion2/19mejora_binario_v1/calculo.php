@@ -5,18 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/img/playamar.png" type="image/x-icon">
     <title>Ejercicio 20 - Sistema Numérico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        p {
+            height: 80vh;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Conversión de Decimal a Binario</h1>
-
+    <p class="d-flex justify-content-center align-items-center text-primary fs-4">
     <?php
 
         // Haz un script PHP en el que conviertas en binario un número natural decimal
-        $base = 16;
-        $numero = 2910;
+        $conversion = $_GET['base']; // recoge, automaticamente, el valor seleecionado del campo select
+        $numero = $_GET['numero'];
         $resultado = "";
         
+        // base dependiendo del valor de la opcion
+        // seleccionado
+        $base = match ($conversion) {
+            'bin' => 2,
+            'oct' => 8,
+            'hex' => 16,
+            'default' => ''
+        };
+
         echo "El número original es $numero y la base a la que pasarlo $base";
         echo "<br>El resultado es: ";
 
@@ -60,26 +75,10 @@
                 $numero = $cociente;
             }
 
-        /*while ($numero >= $base) {
-
-            if ($digito > 9) {
-
-                    // si el digito fuera 10, sacaria 'A', si 11, sacaria 'B', etc
-                    // chr() cambia numero por caracter ASCII
-                    // el 55 es para el 'salto' entre el 10 y la 'A' que es 65
-                    $caracter = chr(55 + $digito);
-                } else {
-                    $caracter = (string) $digito;
-                }
-
-            $resultado =  (string) $caracter . $numero % $base . $resultado; // casting explícito
-            $numero /= $base;
-
-        }*/
-
         echo (string) $numero . $resultado;
 
     ?>
+    </p>
     
 </body>
 </html>
