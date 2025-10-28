@@ -20,7 +20,7 @@
 
     <!--formulario-->
     <div class="d-flex justify-content-center align-items-center" id="wrapper">
-        <form class="p-3 shadow rounded bg-secondary-subtle" action="<?php $_SERVER['PHP_SELF'] ?>"
+        <form class="p-3 shadow rounded bg-secondary-subtle" action="<?php echo $_SERVER['PHP_SELF'] ?>"
         method="GET" id="form1">
             <h1 class="text-primary">Cálculo del Factorial</h1>
             <div class="mb-3">
@@ -46,7 +46,7 @@
             var numero = parseInt(document.getElementById('numero').value);
             var correcto = true;
 
-            if (Number.isNaN(numero) || typeof numero != 'number' || numero.trim() == "") {
+            if (Number.isNaN(numero) || typeof numero != 'number') {
                 marcarError('numero');
                 correcto = false;
             }
@@ -104,7 +104,7 @@
                 }
             }
 
-            echo "<br>El factorial de $numero es $factorial"
+            echo "<br>El factorial de $numero es $factorial";
 
         ?>
     </div>

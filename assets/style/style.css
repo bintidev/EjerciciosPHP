@@ -1,4 +1,5 @@
 #banner {
+    z-index: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +25,11 @@
     color: white;
 }
 
+    #content h1:hover {
+        font-style: italic;
+        transition: 1;
+    }
+
 .navbar {
     z-index: 1;
     position: fixed;
@@ -32,14 +38,13 @@
 }
 
 #blue-btn {
-    border-color: #616496;
-    color: #616496;
+    border-color: #4c53ac;
+    color: #4c53ac;
 }
 
     #blue-btn:hover {
-        background-color: #616496;
+        background-color: #4c53ac;
         color: white;
-        font-weight: 500;
     }
 
 #purple-btn {
@@ -52,14 +57,25 @@
         color: white;
     }
 
+#green-btn {
+    border-color: #63ca5f;
+    color: #63ca5f;
+}
+
+    #green-btn:hover {
+        background-color: #63ca5f;
+        color: white;
+    }
+
 .card {
     box-shadow: none;
-    transition: .3s;
-    transition-timing-function: ease-in;
+    
 }
 
     .card:hover {
-        box-shadow: 0 0 20.5px #6e92ee;
+        box-shadow: 0 0 20.5px #aaaaaa;
+        transform: scale(1.05);
+        transition: .3s;
     }
 
 #footer {
