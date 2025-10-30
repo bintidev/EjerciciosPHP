@@ -16,9 +16,9 @@
 
     <div class="d-flex justify-content-center align-items-center" id="wrapper">
         <!-- cuando el cáclculo está en el propio archivo
-         hay que llamarlo desde action (a sí mismo) -->
-        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get" class="p-3 shadow rounded">
-            <h2 class="text-danger text-center">Calculadora Básica con 2 Números y un Operador</h2>
+        hay que llamarlo desde action (a sí mismo) -->
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get" class="p-3 shadow rounded bg-secondary-subtle">
+            <h2 class="text-primary text-center">Calculadora Básica con 2 Números y un Operador</h2>
             <div class="mb-3">
                 <label for="numero1" class="form-label">Introduce número 1:</label>
                 <input class="form-control" type="number" name="numero1" step="0.01" placeholder="Como mucho 2 cifras decimales" aria-label="default input example">

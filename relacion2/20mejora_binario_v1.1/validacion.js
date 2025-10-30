@@ -4,11 +4,20 @@ document.getElementById('form1').addEventListener("submit", function validarForm
     event.preventDefault();
 
     var numero = parseInt(document.getElementById('numero').value);
+    // recoge el campo select
+    var base = document.getElementById('base');
 
     var correcto = true;
 
     if (Number.isNaN(numero) || typeof numero != 'number') {
         marcarError('numero');
+        correcto = false;
+    }
+
+    // obtiene el valor de la opcion seleccionada del select
+    // (lo hace por defecto)
+    if (base.value == "") {
+        marcarError('base');
         correcto = false;
     }
 
@@ -19,6 +28,12 @@ document.getElementById('form1').addEventListener("submit", function validarForm
 document.getElementById('numero').addEventListener("change", function () {
 
     limpiarError('numero');
+
+});
+
+document.getElementById('base').addEventListener("change", function () {
+
+    limpiarError('base');
 
 });
 
