@@ -29,8 +29,9 @@
             </div>
 
             <div class="mb-3">
-                <label for="email" class="form-label">Email:</label>
+                <label for="email" class="form-label"><span class="text-danger">* </span>Email:</label>
                 <input class="form-control" id="email" name="email" type="email" placeholder="Correo electrónico" aria-label="default input example">
+                <div class="form-text text-danger" id="emailHelp">Dirección de correo inválida</div>
             </div>
 
             <div class="mb-3">
@@ -52,10 +53,12 @@
             </div>
 
             <div class="mb-3">
-
                 <label for="identificacion" class="form-label"><span class="text-danger">* </span>Ingrese su identificación:</label>
                 <input class="form-control" id="identificacion" name="identificacion" type="text" placeholder="Números y caracteres de control" aria-label="default input example">
+                <div id="identificacionHelp" class="form-text text-danger"></div>
+            </div>
                 
+            <div class="mb-3">
                 <label for="tipoId"><span class="text-danger">* </span>Seleccione el tipo de identificación</label>
                 <select class="form-select form-select-sm" aria-label="Small select example" id="tipoId" name="tipoId">
                     <option selected value="">--- Seleccione uno ---</option>

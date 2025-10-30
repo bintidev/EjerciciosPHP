@@ -1,5 +1,5 @@
 /**********************************************************
- * Validaciones para el formulario del ejericico 13
+ * Validaciones para el formulario del ejercicio 13
  * Autor: Binta
  * Fecha: 10/10/2025
  * Enlace con: /13rubrica_notas_v2/formulario.html
@@ -28,15 +28,23 @@ document.getElementById('form1').addEventListener("submit", function validarForm
 
         // expresiones
         // requisitos mínimos de coincidencia que debe cumplir el valor del campo email
-        const expresionEmail = /(^[a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+\.[com,es,hotmail]$)/i;
+        const expresionEmail = /^[-._a-zA-Z0-9]+@[-._a-zA-Z0-9]+\.[a-zA-Z]+$/;
+        // patrones para cada tipo de documento
         const expresionDNI = /^[0-9]{8}[a-zA-Z]$/;
-        const expresionNIE = /^[xyzXYZ][0-9]{7}[xyzXYZ]$/;
-        const expresionTIE = /^[Ee][0-9]{8}$/;
+        const expresionNIE = /^[xyzXYZ][0-9]{7}[a-zA-Z]$/;
+        // combina el NIE y el "numero de soporte", formando el TIE
+        const expresionTIE = /^[xyzXYZ][0-9]{7}[a-zA-Z][Ee][0-9]{8}$/;
 
         // se cumple la condición si eliminando los
         // espacios del nombre la cadena queda vacía
         if (nombre.trim() == "") {
             marcarError('nombre');
+            correcto = false;
+        }
+
+        // comprobación de un email con requisitos mínimos
+        if (!email.match(expresionEmail)) {
+            marcarError('email');
             correcto = false;
         }
 
@@ -57,23 +65,39 @@ document.getElementById('form1').addEventListener("submit", function validarForm
             correcto = false;
         }
 
-        // comprobación de un email con requisitos mínimos
-        if (!email.match(expresionEmail)) {
-            marcarError('email');
+        // comprobación de que el campo identificación no está vacío
+        if (identificacion.trim() == "") {
+            document.getElementById('identificacionHelp').innerText = "Esta campo es obligatorio";
+            marcarError('identificacion');
             correcto = false;
         }
 
-        // comprobación identificacion
-        if (identificacion.trim() == "") {
-            
+        // comprbación de despliegue del elemento select
+        if (tipoId == "") {
+            marcarError('tipoId');
+            correcto = false;
         }
-        /*if (tipoId == "dni" && !identificacion.match(expresionDNI)) {
-
-            
-
-        }*/
         
+        // comprobacion para seleccion de identificacion tipo DNI
+        if (tipoId == "dni" && !identificacion.match(expresionDNI)) {
+            document.getElementById('identificacionHelp').innerText = mensajeIdentificacion();
+            marcarError('identificacion');
+            correcto = false;
+        }
 
+        // comprobacion para seleccion de identificacion tipo NIE
+        if (tipoId == "nie" && !identificacion.match(expresionNIE)) {
+            document.getElementById('identificacionHelp').innerText = mensajeIdentificacion();
+            marcarError('identificacion');
+            correcto = false;
+        }
+
+        // comprobacion para seleccion de identificacion tipo TIE
+        if (tipoId == "tie" && !identificacion.match(expresionTIE)) {
+            document.getElementById('identificacionHelp').innerText = mensajeIdentificacion();
+            marcarError('identificacion');
+            correcto = false;
+        }
 
         // si han ido bien todas las comprobaciones se activa
         // de nuveo el evento submit y se envía todo
@@ -113,6 +137,12 @@ document.getElementById("identificacion").addEventListener("change", function ()
 
 });
 
+document.getElementById("tipoId").addEventListener("change", function () {
+
+    limpiarError('tipoId');
+
+});
+
 function marcarError(identificador) {
 
     document.getElementById(identificador + 'Help').style.visibility = "visible";
@@ -127,11 +157,14 @@ function limpiarError(identificador) {
 
 }
 
+// mensaje de error personalizado para cada tipo de identificacion
 function mensajeIdentificacion() {
 
-    let mensaje = "";
+    var tipoId = document.getElementById('tipoId').value;
+    let mensaje;
 
     switch (tipoId) {
+
         case "dni":
             mensaje = "El DNI debe tener 8 dígitos y un caracter identificativo";
             break;
@@ -144,9 +177,6 @@ function mensajeIdentificacion() {
             mensaje = "El TIE debe ser el NIE seguido de una 'E' y 8 dígitos";
             break;
     
-        default:
-            mensaje = "Escoja una opción válida";
-            break;
     }
 
     return mensaje;

@@ -46,7 +46,7 @@
 
             <?php
 
-                include "relacion3.php";
+                include './relacion3.php';
 
                 // recogida de entrada del usuario
                 $numero1 = $_GET['numero1'];
@@ -78,7 +78,6 @@
                 echo "Mínimo Común Divisor (recursivo) de " . $numero3 . " y " . $numero4 . " es: " . mcdEuclidesRecursivo($numero3, $numero4) . "<br>";
                 
             ?>
-        </table>
 
     </div>
 
