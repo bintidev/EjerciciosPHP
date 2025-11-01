@@ -38,6 +38,8 @@
             $resultado = '';
             
             // DADO NORMAL
+            // crea un array con valores elementos del 1 al 6,
+            // cada uno con un valor de 0
             $frecuencia = array_fill(1, 6, 0);
 
             echo "<div class='text-center my-3 fs-2'>Resultado por tirada con el dado normal:</div> <br>";

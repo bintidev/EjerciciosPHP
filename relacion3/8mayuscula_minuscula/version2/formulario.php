@@ -31,11 +31,11 @@
 
             <div class="mb-3">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="operacion[]" id="mayusculas" value="mayusculas">
+                    <input class="form-check-input" type="radio" name="operacion" id="mayusculas" value="mayusculas">
                     <label class="form-check-label" for="mayusculas">Convertir a mayúsculas</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="operacion[]" id="minusculas" value="minusculas">
+                    <input class="form-check-input" type="radio" name="operacion" id="minusculas" value="minusculas">
                     <label class="form-check-label" for="minusculas">Convertir a minúsuclas</label>
                 </div>
                 <div id="operacionHelp" class="text-danger">Es obligatorio marcar una operación</div>
@@ -115,27 +115,15 @@
         <?php
 
             $texto = $_GET['texto'];
-            $operacion = $_GET['operacion'] ?? [];
+            $operacion = $_GET['operacion'];
 
-            $marcadosAmbos = isset($operacion[0]) && isset($operacion[1]);
-            $marcadoIndividual = isset($operacion[0]) || isset($operacion[1]);
+            if ($operacion == 'mayusculas') {
 
-            if ($marcadosAmbos &&
-            ($operacion[0] == 'minusculas' || $operacion[1] == 'minusculas') &&
-            ($operacion[0] == 'mayusculas' || $operacion[1] == 'mayusculas')) {
+                echo "$texto a mayúsuclas: " . strtoupper($texto);
 
-                echo "$texto a mayúsculas: " . strtoupper($texto) . "<br>";
+            } else {
+
                 echo "$texto a minúsculas: " . strtolower($texto);
-
-            } elseif ($marcadoIndividual &&
-            ($operacion[0] == 'minusculas' || $operacion[1] == 'minusculas')) {
-                
-                echo "$texto a minúsculas: " . strtolower($texto);
-
-            } elseif ($marcadoIndividual &&
-            ($operacion[0] == 'mayusculas' || $operacion[1] == 'mayusculas')) {
-                    
-                echo "$texto a mayúsculas: " . strtoupper($texto);
 
             }
 

@@ -76,6 +76,16 @@
 
             }
 
+            $dia = diaES(date('d'));
+            $mes = mesES(date('m'));
+            $anyo = date('Y');
+
+            $fecha = ("1-11-2025");
+
+            $fechaFormateada1 = date($fecha, 'dd-MM-YY');
+
+            echo $fechaFormateada1;
+
         ?>
 
     </div>
