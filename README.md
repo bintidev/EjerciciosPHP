@@ -1,7 +1,7 @@
 
 <div align="center">
 
-![Banner](./assets/img/php-banner.jpg)
+![Banner](./assets/img/dwes-banner.jpg)
 
 </div>
 
@@ -11,7 +11,7 @@
 En este repositorio podrás encontrar los ejercicios y proyectos realizados a lo largo del curso
 en el módulo de entorno servidor.
 Esta asignatura se enfoca en la **programación server-side**, específicamente, usando el **lenguaje PHP**,
-entre otras cuantas tecnologías.
+entre otras tantas tecnologías.
 
 > Por el momento, está desplegada como una página
 
