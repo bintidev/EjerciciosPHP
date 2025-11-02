@@ -31,14 +31,14 @@
         </form>
     </div>
 
-    <div class="container-fluid w-75">
+    <div class="container-fluid w-75 mb-3">
         <?php
 
             $lanzamientos = $_GET['lanzamiento'];
             $resultado = '';
             
             // DADO NORMAL
-            // crea un array con valores elementos del 1 al 6,
+            // crea un array asociativo con claves del 1 al 6,
             // cada uno con un valor de 0
             $frecuencia = array_fill(1, 6, 0);
 
@@ -49,16 +49,18 @@
                 // dado comun de 6 caras
                 $dadoEquiprobable = rand(1, 6);
                 $frecuencia[$dadoEquiprobable]++;
-                $resultado += $dadoEquiprobable . "  ";
+                $resultado .= "$dadoEquiprobable  ";
                 echo "$resultado";
 
             }
 
             echo "<div class='text-center my-3 fs-4'>Frecuencia con el dado normal:</div> <br>";
             // frecuencia de cada cara obtenida del dado normal
+            echo "<div class='text-center'>";
             foreach ($frecuencia as $numero => $f) {
                 echo "El $numero ha salido $f veces <br>";
             }
+            echo "</div>";
 
             $resultado = '';
 
@@ -85,16 +87,18 @@
                 }
 
                 $frecuencia[$dadoTrucado]++;
-                $resultado += $dadoTrucado . "  ";
+                $resultado .= "$dadoTrucado  ";
                 echo "$resultado";
 
             }
 
             echo "<div class='text-center my-3 fs-4'>Frecuencia con el dado TRUCADO:</div>";
             // frecuencia de cada cara obtenida del dado normal
+            echo "<div class='text-center'>";
             foreach ($frecuencia as $valor => $f) {
                 echo "El $valor ha salido $f veces <br>";
             }
+            echo "</div>";
 
         ?>
     </div>
