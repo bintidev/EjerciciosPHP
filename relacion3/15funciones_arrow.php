@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 14 - Funciones Anónimas</title>
+    <title>Ejercicio 15 - Funciones Arrow</title>
     <link rel="shortcut icon" href="../assets/img/playamar.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
@@ -90,15 +90,30 @@
                 $radio = $_GET['radio'];
 
                 // calcula la longitud de una circunferencia
-                $circunferencia = function ($r) { return 2 * M_PI * $r; };
+                $circunferencia = fn ($r) => 2 * M_PI * $r;
                 // calcula el área de un circulo
-                $circulo = function ($r) { return M_PI * pow($r, 2); };
+                $circulo = fn ($r) => M_PI * pow($r, 2);
                 // calcula el volumen de una esfera
-                $esfera = function ($r) { return (4 / 3) * M_PI * pow($r, 3); };
+                $esfera = fn ($r) => (4 / 3) * M_PI * pow($r, 3);
 
                 echo "Longitud de la circunferencia: ". round($circunferencia($radio), 2) . " cm<br>";
                 echo "Área del círculo: " . round($circulo($radio), 2) . " cm2<br>";
                 echo "Volumen de la esfera: " . round($esfera($radio), 2) . " cm3<br>";
+                
+                switch ($variable) {
+                    case 'value':
+                        # code...
+                        break;
+                    
+                    default:
+                        # code...
+                        break;
+                }
+
+                match (expression) {
+                     => ,
+                     => ,
+                }
 
             ?>
 
