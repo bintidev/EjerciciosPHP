@@ -26,12 +26,17 @@
                 // crea un array de valores impares (salto de 2) del 1 al 20
                 $impares = range(1, 20, 2);
                 // rango de valores para el array $multiplosDeTres
-                $rango = range(1, 40);
+                $rango = range(3, 39, 3);
                 // almacena los valores multiplos de 3 de dicho rango en el array
                 $multiplosDeTres = array_filter($rango, fn($v) => $v % 3 == 0);
 
-                // muestra el contenido del array
-                echo "Contenido del array <br>";
+                // mostrar el contenido de los arrays
+                echo "Contenido del array de Números Impares <br>";
+                for ($i = 0; $i < sizeof($impares); $i++) { 
+                    echo $impares[$i] . " ";
+                }   
+
+                echo "Contenido del array de Múltiplos de 3 <br>";
                 for ($i = 0; $i < sizeof($multiplosDeTres); $i++) { 
                     if (!empty($multiplosDeTres[$i])) { echo $multiplosDeTres[$i] . " "; }
                 }
@@ -43,7 +48,7 @@
 
                 // devuelve un array con la combinacion de los valores de ambos arrays
                 echo "<div class='alert alert-primary' role='alert'>";
-                $combinacion = array_combine($impares, $rango);
+                $combinacion = array_combine($rango, $impares);
                 echo "<br>Combinación de los valores de ambos arrays<br>";
                 for ($i = 0; $i < sizeof($combinacion); $i++) { 
                     echo $combinacion[$i] . " ";
@@ -51,13 +56,14 @@
                 echo "</div>";
 
                 //devuelve un array de los valores que difieren de ambos arrays
-                /*echo "<div class='alert alert-primary' role='alert'>";
-                $diferencia = array_diff($impares, $multiplosDeTres);
+                echo "<div class='alert alert-primary' role='alert'>";
+                $imparesMultiplosCinco = array_any($impares, fn($a) => $a % 5 == 0);
+                $multiplosTresMultiplosCinco = array_any($multiplosDeTres , fn($a) => $a % 5 == 0);
                 echo "<br>Diferencia entre ambos arrays<br>";
                 for ($i = 0; $i < sizeof($diferencia); $i++) { 
                     if (!empty($diferencia[$i])) { echo $diferencia[$i] . " "; }
                 }
-                echo "</div>";*/
+                echo "</div>";
 
                 // USAR array_unique CUANDO LOGRE COMBINARLOS
 
