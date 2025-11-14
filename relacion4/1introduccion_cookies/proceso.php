@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="shortcut icon" href="../../assets/img/playamar.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
@@ -19,6 +19,7 @@
 
         <?php
 
+            // FUNCIÓN PROVISIONAL (realmente, debería conectar con una bd)
             // devuelve un booleano determinando si tanto el usuario
             // como la contraseña introducidos por el usuario son correctos
             function comprobarAcceso($id, $psswd) {
@@ -41,7 +42,7 @@
 
                 // comprueba que está activada dicha cookie
                 if (isset($_COOKIE['usuario'])) {
-                    echo "Te llamas " . $_COOKIE['usuario'];
+                    echo "Te llamas " . $_COOKIE['usuario'] . " según tu cookie";
                 }
 
                 // activa una variable de sesión y está activa hasta que se

@@ -108,62 +108,105 @@
             <a href="1introduccion_cookies/login.php" target="_blank"
             class="list-group-item list-group-item-action p-4 border-primary" id="ej1">
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">1. Función <code>esPrimo($num)</code></h5>
+                    <h5 class="mb-1">1. Introducción a Cookies y Sesiones</h5>
                 </div>
                 <p class="mb-1">
-                    Devuelve un booleano que indique si el número pasado como parámetro es
-                    primo o no. Pide un número natural, y usa dicha función para mostrar todos
-                    los número primos entre el 1 y el introducido
+                    Aplicación PHP básica en 2 archivos:
+                    <ul>
+                        <li>
+                            <code>login.php</code>: una página html con un formulario de acceso que pide
+                            id de usuario y contraseña
+                        </li>
+                        <li>
+                            <code>proceso.php</code>: crea una sesión, comprueba que el id de usuario y la contraseña son los
+                            que deben ser invocando a una función PHP con valores locales para ambos datos y establece una cookie
+                            con el nombre y una variable de sesión: <br>
+
+                            <code>
+                                setcookie("id_usuario", $nombre_usuario, time() + 30, "/");
+                                $_SESSION["id_usuario"] = $_POST['nombre_usuario'];
+                            </code>
+                        </li>
+                    </ul>
+                    A continuación, mediante dos echo, muestra el nombre a través de cookie y el nombre a través de variable de
+                    sesión
                 </p>
             </a>
             <a href="2variables_sesion.php" target="_blank"
         
             class="list-group-item list-group-item-action p-4 border-primary" id="ej2">
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">2. Mejora Factorial (relacion1)</h5>
+                    <h5 class="mb-1">2. Variables de Sesión</h5>
                 </div>
                 <p class="mb-1">
-                    Conversión a función, además de una función adicional usando recursividad
+                    Demuestre de forma práctica el uso de las variables de sesión y su mantenimiento. Para ello, se muestran dos
+                    variables diferentes: num1 y num2, que inicialmente, valdrán 0 ambas, y un campo select de formulario en el que
+                    podremos elegir cuatro opciones:
+                    <ul>
+                        <li>Incrementar a</li>
+                        <li>Decrementar a</li>
+                        <li>Incrementar b</li>
+                        <li>Decrementar b</li>
+                    </ul>
                 </p>
             </a>
-            <a href="https://github.com/bintidev/EjerciciosPHP/blob/main/relacion3/3mcd_euclides_v1.php" target="_blank"
+            <a href="#" target="_blank"
             class="list-group-item list-group-item-action p-4 border-primary" id="ej3">
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">3. Mejora MCD y División Euclides (relacion1)</h5>
+                    <h5 class="mb-1">3. </h5>
                 </div>
                 <p class="mb-1">
-                    Cambio de operativa por dos funciones. + Bonus: versión recursiva de cada
-                    una de las funciones
+                    ---
                 </p>
             </a>
-            <a href="https://github.com/bintidev/EjerciciosPHP/tree/main/relacion3/4libreria_funciones" target="_blank"
+            <a href="#" target="_blank"
             class="list-group-item list-group-item-action p-4 border-primary" id="ej4">
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">4. Librería de Funciones (Ejs. 1-3)</h5>
+                    <h5 class="mb-1">4. </h5>
                 </div>
                 <p class="mb-1">
-                    Directorio con las funciones de los ejercicios anteriores, llamadas desde un
-                    fichero aparte
+                    ---
                 </p>
             </a>
-            <a href="5clase_restaurante.php" target="_blank"
+            <a href="5clase_restaurante/index.php" target="_blank"
             class="list-group-item list-group-item-action p-4 border-primary" id="ej5">
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">5. Mejora de Nota Media v3.1 (relacion1)</h5>
+                    <h5 class="mb-1">5. Clase Restaurante</h5>
                 </div>
                 <p class="mb-1">
-                    Añade la validación de email. Pide también un tipo de documento de identidad, y comprueba
-                    su validez
+                    Programa PHP que define la clase Restaurante, con los siguientes atributos:
+                    <ul>
+                        <li>nombre</li>
+                        <li>tipoCocina</li>
+                        <li>ratings (es un array de valoraciones numéricas entre 1 y 5)</li>
+                    </ul>
+
+                    Define los métodos:
+                    <ul>
+                        <li>
+                            constructor (solo incluye como parámetros el nobre y el tipoCocina e
+                            inicializa ratings a vacío)
+                        </li>
+                        <li>destructor</li>
+                        <li>toString (permite visualizar la información de forma estructurada)</li>
+                        <li>obtener el número de ratings</li>
+                        <li>añadir un rating</li>
+                        <li>añadir otros ratings (más de uno)</li>
+                        <li>calcular rating medio</li>
+                    </ul>
                 </p>
             </a>
             <a href="https://github.com/bintidev/EjerciciosPHP/blob/main/relacion3/6dados.php" target="_blank"
             class="list-group-item list-group-item-action p-4 border-primary" id="ej6">
                 <div class="d-flex w-100 justify-content-between">
-                    <h5 class="mb-1">6. Dados</h5>
+                    <h5 class="mb-1">6. Clase Restaurante v1</h5>
                 </div>
                 <p class="mb-1">
-                    Simula el lanzamientos de un dado equiprobable y otro trucado (siendo el seis, tres veces más probable
-                    que los demás resultados). Cuenta la frecuencia tanto del dado correcto como el trucado, y las visualiza
+                    Modificación del ejercicio anterior para que todos los atributos sean privados y solo se
+                    pueda acceder a ellos mediante getters y setter. <br>
+                    Bonus: <br>
+                    Creación de atributo static de clase: <code>numeroRest</code>, privado, que se incremente con
+                    cada nuevo objeto y se pueda acceder a él mediante un método público de clase totalRest()
                 </p>
             </a>
             <a href="7fecha_hora.php" target="_blank"

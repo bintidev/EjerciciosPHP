@@ -42,7 +42,7 @@
 
         ?>
 
-        <form class="p-3 shadow rounded bg-secondary-subtle" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>"
+        <form class="p-3 shadow rounded bg-secondary-subtle w-25" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) ?>"
         method="post">
             <h1 class="text-primary">Moficando Valores con Variables de Sesión</h1>
 
@@ -89,6 +89,16 @@
                         $_SESSION['a'] = 0;
                         $_SESSION['b'] = 0;
                         session_destroy();
+                        // muestra un spinner mientras se recarga la página
+                        echo "<div class=' d-flex justify-content-center'>
+                            <div class='spinner-border text-primary m-3'
+                            role='status'>
+                                <span class='visually-hidden'>Loading...</span>
+                            </div>
+                        </div>";
+                        /*tiempo de recarga deliberado tras la
+                        destrucción de la sesión*/
+                        header("refresh: 10;");
                         break;
                 }
 
@@ -110,8 +120,8 @@
             ?>
 
             <!-- Muestra el nuevo valor asignado a las variables -->
-            <h4>A: <?php echo $_SESSION['a']?></h4>
-            <h4>B: <?php echo $_SESSION['b']?></h4>
+            <h4>a = <?php echo $_SESSION['a']?></h4>
+            <h4>b = <?php echo $_SESSION['b']?></h4>
 
             <div class="mb-3">
                 <select name="operacion" id="operacion" class="form-select">
@@ -126,7 +136,7 @@
             </div>
 
             <div class="mb-3">
-                <button type="submit" class="btn btn-outline-primary" name="enviar">Enviar</button>
+                <button type="submit" class="btn btn-outline-primary" name="enviar">OK</button>
             </div>
         </form>
     </div>
