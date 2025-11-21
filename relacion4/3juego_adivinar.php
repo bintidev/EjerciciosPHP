@@ -11,53 +11,53 @@
             height: 80vh;
         }
 
-        .alert {
+        /*#respuesta {
             visibility: hidden;
-        }
+        }*/
     </style>
 </head>
 <body>
 
     <div class="d-flex justify-content-center align-items-center" id="wrapper">
         <form class="p-3 shadow rounded bg-secondary-subtle"
-        action="<?php htmlspecialchars($_SERVER['PHP_SELF']) ?>" method="get">
+        action="<?php htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
             <h1 class="text-primary">Adivina el Número</h1>
 
-            <input type="number" name="pensado" id="pensado" value="<?php rand(1, 100); ?>" hidden>
-
-            <div class="mb-3">
-                
-                <?php
-
-                    $pensado = $_GET['pensado'];
-                    $intento = $_GET['intento'];
-
-                    if ($intento > $pensado) {
-                        $respueta = '<div class="alert alert-danger" role="alert" style="visibility: visible;">
-                                                    ¡Upsi! Te has pasado :/
-                                                </div>';
-                        $intento = $_GET['intento'];
-                    } else if ( $intento < $pensado) {
-                        $respuesta = '<div class="alert alert-warning" role="alert" style="visibility: visible;">
-                                                    Casi, casi...Te has quedado corto :P
-                                                </div>';
-                        $intento = $_GET['intento'];
-                    } else {
-                        $respuesta = '<div class="alert alert-danger" role="alert" style="visibility: visible;">
-                                                    ¡Oleee, has acertado! :D
-                                                </div>';
-                    }
-
-                    echo $respuesta;
-
-                ?>
-
-            </div>
+            <input type="hidden" name="pensado" id="pensado" value="<?php $num = rand(1, 100); ?>">
 
             <div class="mb-3">
                 <label for="intento" class="form-label">Adivina el número que estoy pensando:</label>
                 <input class="form-control" type="number" placeholder="Entre 1 y 100"
                 name="intento" id="intento" aria-label="default input example">
+            </div>
+
+            <div class="mb-3" id="respuesta">
+                
+                <?php
+
+                    echo "<p>" . $_POST['pensado'] . "</p>";
+                    //$pensado = $_POST['pensado'];
+                    /*$intento = $_REQUEST['intento'];
+                    $respuesta = '';*/
+
+                    /*if ($intento > $pensado) {
+                        $respuesta = '<div class="alert alert-danger" role="alert" style="visibility: visible;">
+                                        ¡Upsi! Te has pasado :/
+                                    </div>';
+                    } else if ($intento < $pensado) {
+                        $respuesta = '<div class="alert alert-warning" role="alert" style="visibility: visible;">
+                                        Casi, casi...Te has quedado corto :P
+                                    </div>';
+                    } else {
+                        $respuesta = '<div class="alert alert-success" role="alert" style="visibility: visible;">
+                                        ¡Oleee, has acertado! :D
+                                    </div>';
+                    }
+
+                    echo $respuesta;*/
+
+                ?>
+
             </div>
 
             <div class="mb-3">
