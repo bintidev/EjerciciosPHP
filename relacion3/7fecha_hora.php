@@ -76,8 +76,8 @@
 
             }
 
-            $dia = diaES(date('d'));
-            $mes = mesES(date('m'));
+            $dia = diaES(date('f'));
+            $mes = mesES(date('mm'));
             $anyo = date('Y');
 
             $fecha = ("1-11-2025");

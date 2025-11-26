@@ -1,0 +1,64 @@
+/* /////// Sahar Ali Raza //////////// */
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+html, body {
+
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-image: url(https://steam.pics/fons/afede0edf03584663cf62f432cba1ad3.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: sway 5s ease-in-out infinite;
+}
+
+
+/*.full-height {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}*/
+
+label .form-label {
+    color: darkgray;
+}
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+}
+
+.card-registration .select-arrow {
+    top: 13px;
+}
+
+
+@keyframes sway {
+    0% {
+        background-position: 50% 50%;
+    }
+
+    25% {
+        background-position: 37% 50%;
+    }
+
+    50% {
+        background-position: 50% 50%;
+    }
+
+    75% {
+        background-position: 60% 50%;
+    }
+
+    100% {
+        background-position: 50% 50%;
+    }
+}

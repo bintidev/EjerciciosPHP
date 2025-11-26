@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 16 - Funciones Callback Arrays</title>
+    <link rel="shortcut icon" href="../assets/img/playamar.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <style>
         .container-fluid {
@@ -13,9 +15,9 @@
 </head>
 <body>
     
-    <div class="container-fluid w-75">
-        
-        <p class="text-center fs-4">
+    <div class="container-fluid w-75 d-flex justify-content-center align-items-center">
+
+        <div>
 
             <?php
 
@@ -24,13 +26,13 @@
                 include './4libreria_funciones/relacion3.php';
 
                 // crea un array de valores entre 1 y 100
-                $arrayPrueba = range(1, 100);
+                $arrayPrueba = range(1, 100, 1);
 
                 // muestra el contenido del array
-                echo "Contenido del array <br>";
+                /*echo "Contenido del array <br>";
                 for ($i = 0; $i < sizeof($arrayPrueba); $i++) { 
                     echo $arrayPrueba[$i] . " ";
-                }
+                }*/
                 
                 // **ATENCION: las funciones a continuación solo funcionan
                 // con las versiones mas recientes de PHP
@@ -38,11 +40,9 @@
                 // Ejemplo: onlinephp.io
 
                 // comprueba que cada elemento del array es positivo
-                echo "<div class='alert alert-primary' role='alert'>";
                 $sonPositivos = array_all($arrayPrueba, fn($a) => $a > 0);
                 $resultadoPositivos = $sonPositivos ? "Todos los valores del array son positivos" : "Algunos valores del array no son positivos";
-                echo "<br>" . $resultadoPositivos . "<br>";
-                echo "</div>";
+                echo "<div class='alert alert-primary' role='alert'><p>" . $resultadoPositivos . "</p></div>";
 
                 //comprueba que CUALQUIER elemento sea multiplo 5
                 echo "<div class='alert alert-secondary' role='alert'>";
@@ -86,7 +86,7 @@
 
             ?>
 
-        </p>
+        </div>
 
     </div>
 
